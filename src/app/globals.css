@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  /* Палитра «Шалфей и песок» — тёплый нейтральный фон, приглушённый шалфейный
+     акцент, terracotta для CTA. Без высокого контраста и ярких цветов —
+     тема тревоги требует, чтобы визуал не тревожил. */
+  --color-bg: #faf8f4;
+  --color-ink: #2b2a28;
+
+  --color-sage: #7a9080;
+  --color-sage-dark: #5f7a68;
+  --color-sage-tint: #eaeee7;
+
+  --color-terracotta: #c17a5a;
+  --color-terracotta-dark: #a8623f;
+
+  --font-display: var(--font-lora);
+  --font-sans: var(--font-inter);
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-page {
+  width: 100%;
+  max-width: 84rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2.5rem;
+  }
+}
