@@ -28,7 +28,7 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          {siteConfig.name} · Психотерапевт
+          {siteConfig.fullName} · Психотерапевт
         </div>
         <div
           style={{

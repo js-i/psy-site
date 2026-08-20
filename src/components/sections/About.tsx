@@ -1,4 +1,4 @@
-import { credentials } from "@/lib/constants";
+import { credentials, siteConfig } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -20,7 +20,7 @@ export function About() {
 
           <div className="mt-6 space-y-4 text-base leading-relaxed text-ink/70">
             <p>
-              Меня зовут Георгий, я психотерапевт, работаю в подходе
+              Меня зовут {siteConfig.fullName}, я психотерапевт, работаю в подходе
               когнитивно-поведенческой терапии (КПТ). Помогаю справляться с
               тревогой, паническими атаками и хроническим стыдом — возвращать
               контроль над своим состоянием и повседневной жизнью.
