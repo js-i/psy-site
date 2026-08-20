@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { submitContactForm, type ContactFormState } from "@/lib/actions/contact";
 import { siteConfig } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { ContactChannelLink } from "@/components/ui/ContactChannelLink";
 import { TelegramIcon } from "@/components/ui/icons/TelegramIcon";
 import { WhatsappIcon } from "@/components/ui/icons/WhatsappIcon";
 
@@ -76,24 +77,20 @@ export function ContactForm() {
             WhatsApp — ссылки ниже.
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
-            <a
+            <ContactChannelLink
               href={siteConfig.telegram.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              icon={<TelegramIcon className="h-4 w-4" />}
               className="inline-flex items-center gap-1.5 font-medium text-sage-dark hover:underline"
             >
-              <TelegramIcon className="h-4 w-4" />
               Telegram
-            </a>
-            <a
+            </ContactChannelLink>
+            <ContactChannelLink
               href={siteConfig.whatsapp.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              icon={<WhatsappIcon className="h-4 w-4" />}
               className="inline-flex items-center gap-1.5 font-medium text-sage-dark hover:underline"
             >
-              <WhatsappIcon className="h-4 w-4" />
               WhatsApp
-            </a>
+            </ContactChannelLink>
           </div>
         </div>
       )}

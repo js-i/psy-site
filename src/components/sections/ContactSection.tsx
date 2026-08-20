@@ -1,6 +1,7 @@
 import { siteConfig } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { ContactChannelLink } from "@/components/ui/ContactChannelLink";
 import { TelegramIcon } from "@/components/ui/icons/TelegramIcon";
 import { WhatsappIcon } from "@/components/ui/icons/WhatsappIcon";
 
@@ -29,24 +30,20 @@ export function ContactSection() {
             </p>
 
             <div className="mt-5 flex flex-col gap-3">
-              <a
+              <ContactChannelLink
                 href={siteConfig.telegram.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                icon={<TelegramIcon className="h-5 w-5 text-sage-dark" />}
                 className="flex items-center gap-3 rounded-lg border border-ink/10 bg-white px-4 py-3 text-sm font-medium text-ink transition-colors hover:border-sage"
               >
-                <TelegramIcon className="h-5 w-5 text-sage-dark" />
                 Telegram · {siteConfig.telegram.display}
-              </a>
-              <a
+              </ContactChannelLink>
+              <ContactChannelLink
                 href={siteConfig.whatsapp.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                icon={<WhatsappIcon className="h-5 w-5 text-sage-dark" />}
                 className="flex items-center gap-3 rounded-lg border border-ink/10 bg-white px-4 py-3 text-sm font-medium text-ink transition-colors hover:border-sage"
               >
-                <WhatsappIcon className="h-5 w-5 text-sage-dark" />
                 WhatsApp · {siteConfig.whatsapp.display}
-              </a>
+              </ContactChannelLink>
             </div>
           </div>
         </div>

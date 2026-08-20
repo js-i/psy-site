@@ -6,8 +6,10 @@ const contactSchema = z.object({
   name: z.string().trim().min(1).max(100),
   contact: z.string().trim().min(1).max(200),
   message: z.string().trim().max(4000).optional().or(z.literal("")),
-  // Honeypot: real users never fill this hidden field.
-  website: z.string().max(0).optional().or(z.literal("")),
+  // Honeypot: real users never fill this hidden field. Left unconstrained
+  // (not max(0)) so a filled-in value still parses — the check below is
+  // what silently reports success to the bot instead of failing parsing.
+  website: z.string().optional().or(z.literal("")),
 });
 
 export type ContactFormState = {
@@ -43,18 +45,12 @@ export async function submitContactForm(
   if (!botToken || !chatId) {
     console.error(
       "Contact form submitted, but TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID are not configured.",
-      { name, contact },
     );
     return { status: "error", message: "not_configured" };
   }
 
-  const lines = [
-    "Новая заявка на консультацию — сайт Георгия",
-    `Имя: ${name}`,
-    `Контакт: ${contact}`,
-    message ? "" : null,
-    message ? `Сообщение: ${message}` : null,
-  ].filter((line) => line !== null);
+  const lines = ["Новая заявка на консультацию — сайт Георгия", `Имя: ${name}`, `Контакт: ${contact}`];
+  if (message) lines.push("", `Сообщение: ${message}`);
 
   try {
     const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {

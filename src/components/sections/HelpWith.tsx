@@ -1,29 +1,6 @@
+import { helpTopics } from "@/content/help-with";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
-
-const TOPICS = [
-  {
-    title: "Тревога",
-    problem:
-      "Постоянное напряжение, мысли, которые сложно остановить, ощущение, что вот-вот случится что-то плохое.",
-    approach:
-      "Работаем с мыслями и привычками, которые поддерживают тревогу, и возвращаем ощущение контроля.",
-  },
-  {
-    title: "Панические атаки",
-    problem:
-      "Резкий приступ страха, учащённое сердцебиение, чувство, что теряете контроль над телом или ситуацией.",
-    approach:
-      "Разбираем механизм паники и осваиваем техники, которые снижают частоту и силу приступов.",
-  },
-  {
-    title: "Стыд",
-    problem:
-      "Ощущение, что с вами что-то не так, желание спрятаться, трудно говорить о себе открыто.",
-    approach:
-      "Учимся замечать это состояние и постепенно менять отношение к себе — без осуждения.",
-  },
-] as const;
 
 export function HelpWith() {
   return (
@@ -36,9 +13,10 @@ export function HelpWith() {
         />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {TOPICS.map((topic) => (
+          {helpTopics.map((topic) => (
             <div
-              key={topic.title}
+              key={topic.id}
+              id={`help-with-${topic.id}`}
               className="rounded-2xl border border-ink/10 bg-bg p-6 sm:p-7"
             >
               <h3 className="font-display text-xl font-semibold text-ink">

@@ -1,4 +1,5 @@
 import { NAV_ITEMS, siteConfig } from "@/lib/constants";
+import { ContactChannelLink } from "@/components/ui/ContactChannelLink";
 import { TelegramIcon } from "@/components/ui/icons/TelegramIcon";
 import { WhatsappIcon } from "@/components/ui/icons/WhatsappIcon";
 
@@ -27,24 +28,18 @@ export function Footer() {
           </nav>
 
           <div className="flex gap-4">
-            <a
+            <ContactChannelLink
               href={siteConfig.telegram.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              icon={<TelegramIcon />}
               aria-label="Написать в Telegram"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink/70 transition-colors hover:border-sage hover:text-sage-dark"
-            >
-              <TelegramIcon />
-            </a>
-            <a
+            />
+            <ContactChannelLink
               href={siteConfig.whatsapp.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              icon={<WhatsappIcon />}
               aria-label="Написать в WhatsApp"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink/70 transition-colors hover:border-sage hover:text-sage-dark"
-            >
-              <WhatsappIcon />
-            </a>
+            />
           </div>
         </div>
 

@@ -7,40 +7,20 @@ import { About } from "@/components/sections/About";
 import { Faq } from "@/components/sections/Faq";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { faqItems } from "@/content/faq";
+import { helpTopics } from "@/content/help-with";
 import { siteConfig } from "@/lib/constants";
 import { JsonLd, serviceJsonLd, faqJsonLd } from "@/lib/json-ld";
-
-const SERVICES = [
-  {
-    name: "Психотерапия тревоги онлайн",
-    description:
-      "КПТ-консультации при тревожных расстройствах: работа с мыслями и привычками, которые поддерживают тревогу.",
-    anchor: "#help-with",
-  },
-  {
-    name: "Терапия панических атак онлайн",
-    description:
-      "Разбор механизма паники и техники, которые снижают частоту и силу приступов.",
-    anchor: "#help-with",
-  },
-  {
-    name: "Работа со стыдом",
-    description:
-      "Постепенное изменение отношения к себе через КПТ-подход, без осуждения.",
-    anchor: "#help-with",
-  },
-] as const;
 
 export default function Home() {
   return (
     <>
-      {SERVICES.map((service) => (
+      {helpTopics.map((topic) => (
         <JsonLd
-          key={service.name}
+          key={topic.id}
           data={serviceJsonLd({
-            name: service.name,
-            description: service.description,
-            url: `${siteConfig.url}/${service.anchor}`,
+            name: topic.seoName,
+            description: topic.seoDescription,
+            url: `${siteConfig.url}/#help-with-${topic.id}`,
           })}
         />
       ))}
