@@ -1,3 +1,4 @@
+import { credentials } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -24,6 +25,16 @@ export function About() {
               тревогой, паническими атаками и хроническим стыдом — возвращать
               контроль над своим состоянием и повседневной жизнью.
             </p>
+            <ul className="space-y-2 border-y border-ink/10 py-4">
+              {credentials.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span aria-hidden="true" className="text-sage-dark">
+                    —
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
             <p>
               Я убеждён, что терапия — это не «на всю жизнь», а конкретные
               навыки, которые потом работают самостоятельно.

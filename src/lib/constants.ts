@@ -20,6 +20,12 @@ export const siteConfig = {
   },
 } as const;
 
+export const credentials = [
+  "Высшее медицинское образование, специализация — психотерапия",
+  "Член Ассоциации когнитивно-поведенческих терапевтов",
+  "Опыт работы в сфере ментального здоровья — более 10 лет",
+] as const;
+
 export const NAV_ITEMS = [
   { href: "#help-with", label: "С чем помогаю" },
   { href: "#how-it-works", label: "Как проходит" },

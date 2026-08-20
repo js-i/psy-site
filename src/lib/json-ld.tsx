@@ -1,4 +1,4 @@
-import { siteConfig } from "./constants";
+import { siteConfig, credentials } from "./constants";
 
 export function personJsonLd() {
   return {
@@ -7,6 +7,7 @@ export function personJsonLd() {
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.name,
     jobTitle: "Психотерапевт",
+    description: credentials.join(". "),
     url: siteConfig.url,
     knowsAbout: [
       "Тревожные расстройства",
