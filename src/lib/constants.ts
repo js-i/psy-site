@@ -18,8 +18,8 @@ export const siteConfig = {
     href: "https://t.me/cbt_doc",
   },
   whatsapp: {
-    display: "+7 981 787-07-01",
-    href: "https://wa.me/79817870701",
+    display: "@cbt_doc",
+    href: "https://wa.me/@cbt_doc",
   },
 } as const;
 
