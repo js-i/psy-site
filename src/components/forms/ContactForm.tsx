@@ -62,14 +62,6 @@ export function ContactForm() {
         />
       </div>
 
-      <div>
-        <label htmlFor="message" className={labelClass}>
-          Что беспокоит{" "}
-          <span className="font-normal text-ink/50">(необязательно)</span>
-        </label>
-        <textarea id="message" name="message" rows={4} className={`mt-1.5 ${inputClass} resize-none`} />
-      </div>
-
       {state.status === "error" && (
         <div role="alert" className="rounded-lg border border-terracotta/30 bg-terracotta/5 px-4 py-3 text-sm text-ink">
           <p>
@@ -95,9 +87,27 @@ export function ContactForm() {
         </div>
       )}
 
-      <p className="text-xs leading-relaxed text-ink/50">
-        Ваши данные использую только для того, чтобы связаться с вами.
-      </p>
+      <div className="flex items-start gap-2.5">
+        <input
+          id="consent"
+          name="consent"
+          type="checkbox"
+          required
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-ink/30 text-sage-dark focus:ring-sage"
+        />
+        <label htmlFor="consent" className="text-xs leading-relaxed text-ink/50">
+          Согласен(на) на обработку персональных данных в соответствии с{" "}
+          <a
+            href="/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-ink"
+          >
+            политикой конфиденциальности
+          </a>
+          . Данные использую только для того, чтобы связаться с вами.
+        </label>
+      </div>
 
       <Button type="submit" disabled={isPending} className="w-full sm:w-auto">
         {isPending ? "Отправляю…" : "Отправить заявку"}

@@ -52,7 +52,7 @@ export default function OpengraphImage() {
             fontWeight: 500,
           }}
         >
-          КПТ-терапия онлайн
+          КПТ-консультации онлайн
         </div>
       </div>
     ),

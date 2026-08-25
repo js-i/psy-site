@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { NAV_ITEMS, siteConfig } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { TelegramIcon } from "@/components/ui/icons/TelegramIcon";
@@ -6,9 +7,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-bg/90 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between sm:h-20">
-        <a href="#top" className="font-display text-lg font-semibold text-ink">
+        <Link href="/#top" className="font-display text-lg font-semibold text-ink">
           {siteConfig.fullName}
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Основная навигация">
           {NAV_ITEMS.map((item) => (
@@ -33,7 +34,7 @@ export function Header() {
             <TelegramIcon className="h-4 w-4 sm:h-5 sm:w-5" />
           </a>
 
-          <ButtonLink href="#contact" className="text-xs sm:text-sm">
+          <ButtonLink href="/#contact" className="text-xs sm:text-sm">
             Записаться
           </ButtonLink>
         </div>

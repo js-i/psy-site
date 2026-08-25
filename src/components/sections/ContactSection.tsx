@@ -12,7 +12,7 @@ export function ContactSection() {
         <div>
           <SectionHeading
             title="Записаться на консультацию"
-            description={`Коротко расскажите о своём запросе — отвечу ${siteConfig.responseTime}.`}
+            description={`Оставьте имя и контакт — отвечу ${siteConfig.responseTime}.`}
           />
           <p className="mt-2 text-sm text-ink/50">
             Консультация — {siteConfig.priceLabel} / {siteConfig.sessionMinutes} минут.

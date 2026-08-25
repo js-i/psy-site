@@ -1,6 +1,6 @@
 function resolveSiteUrl() {
   const raw = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
-  if (!raw) return "https://ai-site.vercel.app";
+  if (!raw) return "https://www.mypsycholog.ru";
   return /^https?:\/\//.test(raw) ? raw : `https://${raw}`;
 }
 
@@ -18,20 +18,20 @@ export const siteConfig = {
     href: "https://t.me/cbt_doc",
   },
   whatsapp: {
-    display: "@cbt_doc",
+    display: "+7 981 787-07-01",
     href: "https://wa.me/79817870701",
   },
 } as const;
 
 export const credentials = [
-  "Высшее медицинское образование (СПбГУ), специализация — психотерапия",
+  "Высшее медицинское образование (СПбГУ), практикую в методе когнитивно-поведенческой терапии (КПТ)",
   "Член Ассоциации когнитивно-поведенческих терапевтов",
   "Опыт работы в сфере ментального здоровья — более 10 лет",
 ] as const;
 
 export const NAV_ITEMS = [
-  { href: "#help-with", label: "С чем помогаю" },
-  { href: "#how-it-works", label: "Как проходит" },
-  { href: "#about", label: "Обо мне" },
-  { href: "#faq", label: "Вопросы" },
+  { href: "/#help-with", label: "С чем помогаю" },
+  { href: "/#how-it-works", label: "Как проходит" },
+  { href: "/#about", label: "Обо мне" },
+  { href: "/#faq", label: "Вопросы" },
 ] as const;

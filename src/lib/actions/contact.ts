@@ -5,11 +5,11 @@ import { z } from "zod";
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(100),
   contact: z.string().trim().min(1).max(200),
-  message: z.string().trim().max(4000).optional().or(z.literal("")),
   // Honeypot: real users never fill this hidden field. Left unconstrained
   // (not max(0)) so a filled-in value still parses — the check below is
   // what silently reports success to the bot instead of failing parsing.
   website: z.string().optional().or(z.literal("")),
+  consent: z.literal("on"),
 });
 
 export type ContactFormState = {
@@ -24,8 +24,8 @@ export async function submitContactForm(
   const parsed = contactSchema.safeParse({
     name: formData.get("name"),
     contact: formData.get("contact"),
-    message: formData.get("message"),
     website: formData.get("website"),
+    consent: formData.get("consent"),
   });
 
   if (!parsed.success) {
@@ -37,7 +37,7 @@ export async function submitContactForm(
     return { status: "success" };
   }
 
-  const { name, contact, message } = parsed.data;
+  const { name, contact } = parsed.data;
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -50,7 +50,6 @@ export async function submitContactForm(
   }
 
   const lines = ["Новая заявка на консультацию — сайт Георгия", `Имя: ${name}`, `Контакт: ${contact}`];
-  if (message) lines.push("", `Сообщение: ${message}`);
 
   try {
     const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {

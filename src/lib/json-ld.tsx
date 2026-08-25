@@ -10,8 +10,8 @@ export function personJsonLd() {
     description: credentials.join(". "),
     url: siteConfig.url,
     knowsAbout: [
-      "Тревожные расстройства",
-      "Панические атаки",
+      "Тревога",
+      "Проявления панических атак",
       "Стыд",
       "Когнитивно-поведенческая терапия",
       "Психолог онлайн"
