@@ -19,7 +19,7 @@ export const siteConfig = {
   },
   whatsapp: {
     display: "@cbt_doc",
-    href: "https://wa.me/@cbt_doc",
+    href: "https://wa.me/79817870701",
   },
 } as const;
 
