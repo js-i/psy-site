@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { credentials, siteConfig } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
@@ -6,13 +7,16 @@ export function About() {
   return (
     <section id="about" className="bg-white py-20 sm:py-28">
       <div className="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-center">
-        <div
-          aria-hidden="true"
-          className="mx-auto flex aspect-square w-full max-w-sm items-center justify-center rounded-3xl bg-gradient-to-br from-sage/15 via-bg to-terracotta/10"
-        >
-          <span className="font-display text-6xl font-semibold text-sage-dark/40">
-            Г
-          </span>
+        <div className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl bg-bg">
+          <Image
+            src="/georgy-portrait.jpg"
+            alt={`${siteConfig.fullName}, психолог`}
+            width={960}
+            height={1200}
+            priority
+            className="h-full w-full object-cover"
+            sizes="(min-width: 1024px) 384px, 90vw"
+          />
         </div>
 
         <div>
@@ -20,7 +24,7 @@ export function About() {
 
           <div className="mt-6 space-y-4 text-base leading-relaxed text-ink/70">
             <p>
-              Меня зовут {siteConfig.fullName}, я психотерапевт, работаю в подходе
+              Меня зовут {siteConfig.fullName}, я психолог, работаю в подходе
               когнитивно-поведенческой терапии (КПТ). Помогаю справляться с
               тревогой, паническими атаками и хроническим стыдом — возвращать
               контроль над своим состоянием и повседневной жизнью.

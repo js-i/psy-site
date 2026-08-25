@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p className="font-display text-lg font-semibold text-ink">
-              {siteConfig.fullName} · Психотерапевт
+              {siteConfig.fullName} · Психолог
             </p>
             <p className="mt-1 text-sm text-ink/60">Онлайн-консультации · КПТ</p>
           </div>
@@ -51,7 +51,7 @@ export function Footer() {
             112 или вызовите скорую помощь.
           </p>
           <p className="mt-4 text-xs text-ink/40">
-            © {new Date().getFullYear()} {siteConfig.fullName}. Психотерапевт.
+            © {new Date().getFullYear()} {siteConfig.fullName}. Психолог.
           </p>
         </div>
       </div>

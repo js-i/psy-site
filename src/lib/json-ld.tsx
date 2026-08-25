@@ -6,7 +6,7 @@ export function personJsonLd() {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.fullName,
-    jobTitle: "Психотерапевт",
+    jobTitle: "Психолог",
     description: credentials.join(". "),
     url: siteConfig.url,
     knowsAbout: [
@@ -24,7 +24,7 @@ export function professionalServiceJsonLd() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${siteConfig.url}/#service`,
-    name: `${siteConfig.fullName} — психотерапевт онлайн`,
+    name: `${siteConfig.fullName} — психолог онлайн`,
     url: siteConfig.url,
     provider: { "@id": `${siteConfig.url}/#person` },
     areaServed: "Worldwide",

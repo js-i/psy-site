@@ -9,14 +9,13 @@ export const siteConfig = {
   priceLabel: "5 000 ₽",
   sessionMinutes: 50,
   responseTime: "в течение суток",
-  // TODO: заменить на реальные контакты перед запуском (см. CLAUDE.md, открытые вопросы).
   telegram: {
-    display: "@georgy_therapist",
-    href: "https://t.me/georgy_therapist",
+    display: "@cbt_doc",
+    href: "https://t.me/cbt_doc",
   },
   whatsapp: {
-    display: "+7 999 000-00-00",
-    href: "https://wa.me/79990000000",
+    display: "+7 981 787-07-01",
+    href: "https://wa.me/79817870701",
   },
 } as const;
 

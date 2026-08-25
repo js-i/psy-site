@@ -19,8 +19,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: `Психотерапевт онлайн · КПТ-терапия при тревоге, панических атаках и стыде — ${siteConfig.fullName}`,
-    description: `Онлайн-консультации психотерапевта ${siteConfig.fullName} по методу КПТ. Помогаю справиться с тревогой, паническими атаками и стыдом. Запись на первую консультацию.`,
+    title: `Психолог онлайн · КПТ-терапия при тревоге, панических атаках и стыде — ${siteConfig.fullName}`,
+    description: `Онлайн-консультации психолога ${siteConfig.fullName} по методу КПТ. Помогаю справиться с тревогой, паническими атаками и стыдом. Запись на первую консультацию.`,
   }),
   metadataBase: new URL(siteConfig.url),
 };
