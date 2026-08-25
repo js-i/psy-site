@@ -6,7 +6,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-bg/90 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between sm:h-20">
         <a href="#top" className="font-display text-lg font-semibold text-ink">
-          {siteConfig.name}
+          {siteConfig.fullName}
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Основная навигация">

@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="container-page flex min-h-[calc(100svh-4rem)] flex-col justify-center py-16 sm:min-h-[calc(100svh-5rem)] sm:py-24">
+      <div className="container-page grid gap-10 py-16 sm:py-20 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:items-center lg:gap-16 lg:py-24">
         <div className="max-w-2xl animate-fade-up">
           <h1 className="font-display text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
             {siteConfig.tagline}
@@ -30,6 +31,20 @@ export function Hero() {
           <p className="mt-6 text-sm text-ink/50">
             Онлайн · {siteConfig.priceLabel} за консультацию · Первая встреча — знакомство и план работы
           </p>
+        </div>
+
+        <div className="mx-auto w-full max-w-70 animate-fade-in sm:max-w-xs lg:max-w-none">
+          <div className="aspect-4/5 overflow-hidden rounded-3xl bg-sage-tint">
+            <Image
+              src="/georgy-hero.jpg"
+              alt={`${siteConfig.fullName}, психолог`}
+              width={960}
+              height={1200}
+              priority
+              className="h-full w-full object-cover"
+              sizes="(min-width: 1024px) 420px, 60vw"
+            />
+          </div>
         </div>
       </div>
     </section>

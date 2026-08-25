@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Георгий",
   fullName: "Георгий Меньшиков",
-  tagline: "Тревога и панические атаки поддаются лечению",
+  tagline: "Тревогу и панические атаки можно взять под контроль",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     "https://ai-site.vercel.app",
