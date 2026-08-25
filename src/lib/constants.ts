@@ -1,10 +1,14 @@
+function resolveSiteUrl() {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (!raw) return "https://ai-site.vercel.app";
+  return /^https?:\/\//.test(raw) ? raw : `https://${raw}`;
+}
+
 export const siteConfig = {
   name: "Георгий",
   fullName: "Георгий Меньшиков",
   tagline: "Тревогу и панические атаки можно взять под контроль",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://ai-site.vercel.app",
+  url: resolveSiteUrl(),
   priceRub: 5000,
   priceLabel: "5 000 ₽",
   sessionMinutes: 50,
