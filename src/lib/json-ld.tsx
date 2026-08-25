@@ -14,6 +14,7 @@ export function personJsonLd() {
       "Панические атаки",
       "Стыд",
       "Когнитивно-поведенческая терапия",
+      "Психолог онлайн"
     ],
     sameAs: [siteConfig.telegram.href, siteConfig.whatsapp.href],
   };
