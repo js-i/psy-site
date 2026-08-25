@@ -3,7 +3,7 @@ export const siteConfig = {
   fullName: "Георгий Меньшиков",
   tagline: "Тревогу и панические атаки можно взять под контроль",
   url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://ai-site.vercel.app",
   priceRub: 5000,
   priceLabel: "5 000 ₽",
