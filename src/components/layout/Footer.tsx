@@ -50,13 +50,8 @@ export function Footer() {
             угрожает опасность, позвоните в службу экстренной помощи по номеру
             112 или вызовите скорую помощь.
           </p>
-          <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/40">
-            <span>
-              © {new Date().getFullYear()} {siteConfig.fullName}. Психолог.
-            </span>
-            <a href="/privacy" className="underline underline-offset-2 hover:text-ink/70">
-              Политика конфиденциальности
-            </a>
+          <p className="mt-4 text-xs text-ink/40">
+            © {new Date().getFullYear()} {siteConfig.fullName}. Психолог.
           </p>
         </div>
       </div>

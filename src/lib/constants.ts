@@ -21,6 +21,10 @@ export const siteConfig = {
     display: "+7 981 787-07-01",
     href: "https://wa.me/79817870701",
   },
+  phone: {
+    display: "+7 981 787-07-01",
+    href: "sms:+79817870701",
+  },
 } as const;
 
 export const credentials = [
